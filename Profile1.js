@@ -93,7 +93,6 @@ describe('Home Page Enter', () => {
 describe('My Pet Check', () => {
   it('Checks to see if everything exists and can be seen', () => {
     //Start
-    //cy.url().should('contains', 'https://spotpetins.com/quote/start/')
     cy.get('#main-header').should('be.visible')
     cy.get('#main-header').should('be.visible')
     cy.get('#main-footer').should('be.visible')
@@ -127,7 +126,6 @@ describe('My Pet Enter', () => {
     cy.get('input[name="emailAddress"]').type('test@test.com')
     cy.get('input[name="emailAddress"]').click(500,0, {force: true })
     cy.get('input[name="lname"]').click({force: true })
-    //cy.get('submit-buttons').click({force: true })
     cy.get('[data-cy=reg-submit]').click({force: true })
     cy.wait(2000)
   })
@@ -139,12 +137,11 @@ describe('My Pet Enter', () => {
 describe('My Plan Check', () => {
   it('Checks the "My Plan" Page', () => {
     //Start
-    //cy.url().should('contains', 'https://spotpetins.com/quote/policy');
     cy.get('#nav-info').should('be.visible')
     cy.get('#main-header').should('be.visible')
     cy.get('#main-footer').should('be.visible')
 
-    // Visible
+    //Check
     cy.get('#nav-info').should('be.visible')
     cy.contains('Accident & Illness Coverage').should('be.visible')
     cy.contains('MOST AFFORDABLE').should('be.visible')
@@ -270,34 +267,6 @@ describe('Checkout Enter', () => {
 
 
 
-describe('Checkout Check', () => {
-  it('Check the "Checkout" Page', () => {
-    //Start
-    cy.get('#main-header').should('be.visible')
-    cy.get('#main-footer').should('be.visible')
-    cy.wait(2000)
-    //cy.contains('Account Number : ').should('be.visible')
-    cy.contains('Policy Start Date:').should('be.visible')
-    cy.contains('Accident coverage starts: ').should('be.visible')
-
-  })
-})
-
-
-
-
 Cypress.on('uncaught:exception', (err, runnable) => {
   return false
 })
-
-
-
-
-//Exp Date: anything:
-//Security code: anything
-//Name: anything
-//Staging:
-//American Express: 341134113411347
-//Discover: 6559906559906557
-//Mastercard: 5112345112345114
-//Visa: 4112344112344113
